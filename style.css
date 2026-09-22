@@ -1,0 +1,478 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top, #3b1624, #160b10 55%, #090608);
+
+    color: #fff;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 650px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   OUTER / MAIN BOX
+========================= */
+
+.card {
+    width: 100%;
+
+    padding: 45px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+    animation: appear 1s ease;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    font-size: clamp(30px, 6vw, 48px);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+    color: #d8bfc6;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   MESSAGE BOX
+========================= */
+
+.message {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 30px 25px;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #eee;
+
+    text-align: center;
+
+    animation: messageAppear 0.8s ease;
+}
+
+
+/* MESSAGE PARAGRAPHS */
+
+.message p {
+    margin-bottom: 18px;
+}
+
+
+/* LAST MESSAGE */
+
+.message p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* IMPORTANT WORDS */
+
+.message strong {
+    color: #ff9db5;
+}
+
+
+/* FINAL MESSAGE */
+
+.final-message {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #ffb3c5;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    margin-top: 20px;
+
+    padding: 13px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ff6f91;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 8px 25px rgba(255, 111, 145, 0.3);
+}
+
+
+button:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   FINAL HIDDEN MESSAGE
+========================= */
+
+#hiddenMessage {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    animation: fadeIn 1s ease;
+}
+
+
+#hiddenMessage p {
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+
+#hiddenMessage strong {
+    color: #ff9db5;
+}
+
+
+#hiddenMessage span {
+    color: #bdaab0;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts span {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: 0.15;
+
+    animation: float 8s linear infinite;
+
+    z-index: 1;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 10%;
+
+    animation-delay: 0s;
+}
+
+
+.hearts span:nth-child(2) {
+    left: 25%;
+
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(3) {
+    left: 45%;
+
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(4) {
+    left: 65%;
+
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+    left: 80%;
+
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(6) {
+    left: 90%;
+
+    animation-delay: 5s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes float {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   PHONE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .card {
+        padding: 35px 18px;
+
+        border-radius: 20px;
+    }
+
+
+    .heart {
+        font-size: 45px;
+    }
+
+
+    h1 {
+        font-size: 32px;
+    }
+
+
+    .subtitle {
+        font-size: 14px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* INNER MESSAGE BOX */
+
+    .message {
+        padding: 25px 18px;
+
+        margin-top: 25px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        border-radius: 16px;
+    }
+
+
+    .message p {
+        margin-bottom: 16px;
+    }
+
+
+    .final-message {
+        font-size: 18px;
+    }
+
+
+    /* BUTTON */
+
+    button {
+        width: 100%;
+
+        padding: 14px 12px;
+
+        font-size: 14px;
+    }
+
+
+    /* FINAL MESSAGE */
+
+    #hiddenMessage p {
+        font-size: 19px;
+    }
+
+
+    #hiddenMessage span {
+        font-size: 12px;
+    }
+}
+
